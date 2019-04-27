@@ -1,0 +1,57 @@
+.wrapper
+
+  = render 'shared/side_bar'
+
+  .chat
+    .header
+      .left-header
+        .left-header__title
+          Sample
+        %ul.left-header__members
+          Member：
+          %li.member
+            yu
+          %li.member
+            helen
+          %li.member
+            blanka
+      .right-header
+        .right-header__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            yu
+          .upper-message__date
+            2019/04/18
+        .lower-meesage
+          .lower-message__content
+            Hello I'm yu
+      .message
+        .upper-message
+          .upper-message__user-name
+            helen
+          .upper-message__date
+            2019/04/18
+        .lower-meesage
+          .lower-message__content
+            I'm happy to be here
+      .message
+        .upper-message
+          .upper-message__user-name
+            blanka
+          .upper-message__date
+            2019/04/19
+        .lower-meesage
+          .lower-message__content
+            don't wanna my homework....
+
+    .form
+      %form
+        %input.form__message
+        .form__mask
+          %label.form__mask__image
+            = fa_icon 'picture-o', class: 'icon'
+            %input.hidden{type: 'file'}
+        %input.form__submit{type: 'submit', value: 'Send'}
