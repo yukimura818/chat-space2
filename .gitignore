@@ -15,3 +15,9 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+public/uploads/*
+
+# Ignore bundler gems.
+vendor/bundle
+
+config/secrets.yml
