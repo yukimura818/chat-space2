@@ -12,46 +12,50 @@
           %li.member
             yu
           %li.member
-            helen
+            mm
           %li.member
-            blanka
+            xx
       .right-header
         .right-header__button
           Edit
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            yu
-          .upper-message__date
-            2019/04/18
-        .lower-meesage
-          .lower-message__content
-            Hello I'm yu
-      .message
-        .upper-message
-          .upper-message__user-name
-            helen
-          .upper-message__date
-            2019/04/18
-        .lower-meesage
-          .lower-message__content
-            I'm happy to be here
-      .message
-        .upper-message
-          .upper-message__user-name
-            blanka
-          .upper-message__date
-            2019/04/19
-        .lower-meesage
-          .lower-message__content
-            don't wanna my homework....
-
+      = render @messages
     .form
-      %form
-        %input.form__message
+      = form_for [@group, @message], html: {class: "js-form"} do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
         .form__mask
-          %label.form__mask__image
+          = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
-            %input.hidden{type: 'file'}
-        %input.form__submit{type: 'submit', value: 'Send'}
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+
+
+
+-# .messages
+    -#   .message
+    -#     .upper-message
+    -#       .upper-message__user-name
+    -#         yu
+    -#       .upper-message__date
+    -#         2019/04/18
+    -#     .lower-meesage
+    -#       .lower-message__content
+    -#         Hello I'm yu nice to see you
+    -#   .message
+    -#     .upper-message
+    -#       .upper-message__user-name
+    -#         helen
+    -#       .upper-message__date
+    -#         2019/04/18
+    -#     .lower-meesage
+    -#       .lower-message__content
+    -#         I'm happy to be here
+    -#   .message
+    -#     .upper-message
+    -#       .upper-message__user-name
+    -#         blanka
+    -#       .upper-message__date
+    -#         2019/04/19
+    -#     .lower-meesage
+    -#       .lower-message__content
+    -#         don't wanna my homework honestly
