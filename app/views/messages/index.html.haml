@@ -6,18 +6,14 @@
     .header
       .left-header
         .left-header__title
-          Sample
+          = @group.name
         %ul.left-header__members
           Member：
-          %li.member
-            yu
-          %li.member
-            mm
-          %li.member
-            xx
+          - @group.users.each do |user|
+            = user.name
       .right-header
         .right-header__button
-          Edit
+          = link_to 'Edit', edit_group_path(@group), class: "right-header__button"
     .messages
       = render @messages
     .form
