@@ -77,9 +77,3 @@ set :default_env, {
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-
-
-# # secrets.yml用のシンボリックリンクを追加
-# set :linked_files, %w{ config/secrets.yml }
-
-# # 元々記述されていた after 「'deploy:publishing', 'deploy:restart'」以下を削除して、次のように書き換え
